@@ -1,0 +1,205 @@
+<section class="category-container">
+
+    <a href="server.html" class="category-card">
+      <img src="CATEGORYIMG/adaptor.png" alt="Server">
+      <h3>Charger Adaptor</h3>
+    </a>
+
+    <a href="laptop.html" class="category-card">
+      <img src="CATEGORYIMG/harging cable.png" alt="Laptop">
+      <h3>Charging Cable</h3>
+    </a>
+
+    <a href="workstation.html" class="category-card">
+      <img src="CATEGORYIMG/earphone.png" alt="Workstation">
+      <h3>Earphones</h3>
+    </a>
+
+    <a href="apple.html" class="category-card">
+      <img src="CATEGORYIMG/OTG.png" alt="Apple">
+      <h3>OTG</h3>
+    </a>
+
+    <a href="network.html" class="category-card">
+      <img src="CATEGORYIMG/holder.png" alt="Networking">
+      <h3>Mobile Holder</h3>
+    </a>
+
+    <a href="storage.html" class="category-card">
+      <img src="CATEGORYIMG/old.png" alt="Storage">
+      <h3>Old / Used Stuff</h3>
+    </a>
+
+    <a href="printer.html" class="category-card">
+      <img src="images/printer.png" alt="Printer">
+      <h3>Printer</h3>
+    </a>
+
+    <a href="security.html" class="category-card">
+      <img src="images/security.png" alt="Security">
+      <h3>Security</h3>
+    </a>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONTAINER GRID */
+.category-container {
+  display: grid;
+
+  /* ✅ Desktop: 4 columns (big but flexible) */
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px; /* slightly increased spacing */
+  padding: 20px;
+}
+
+/* CARD */
+.category-card {
+  text-decoration: none;
+  color: black;
+  background: #f8f8f8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  border-radius: 10px;
+
+  transition: 0.3s;
+
+  /* ✅ Increased height */
+  height: 320px;
+}
+
+/* HOVER EFFECT */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE CONTROL */
+.category-card img {
+  width: 120%;
+
+  /* ✅ Bigger image */
+  height: 260px;
+
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* TEXT */
+.category-card h3 {
+  margin-top: 15px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* ✅ TABLET (optional but recommended) */
+@media (max-width: 900px) {
+  .category-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ✅ MOBILE (IMPORTANT: 2 per row) */
+@media (max-width: 600px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card {
+    height: 280px; /* slightly smaller for mobile */
+  }
+
+  .category-card img {
+    height: 180px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+scroll-banner {
+    overflow: hidden; /* hides extra images */
+    position: sticky;   /* makes it sticky */
+    top: 52px;          /* 52px = height of your navbar so it sticks just below navbar */
+    z-index: 999;
+}
+
+/* TRACK */
+.scroll-track {
+    display: flex; /* horizontal layout */
+    width: max-content; /* makes width based on content */
+    animation: scroll 20s linear infinite; 
+    /* increased duration for smooth scrolling */
+}
+
+/* IMAGE */
+.scroll-track img {
+    height: 120px;    /* 🔥 THIS controls height */
+    /* object-fit: cover; prevents image stretching */
+    width: 250px; /* control size */
+    margin-right: 0px; /* spacing */
+}
+
+/* ANIMATION */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

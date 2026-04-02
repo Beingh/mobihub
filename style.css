@@ -1,0 +1,483 @@
+/* Reset default browser spacing */
+
+
+*{
+    margin: 0; /*Removes default margin*/
+    padding: 0;  /*Removes default padding*/
+    box-sizing: border-box;     /*Makes width include padding and border*/
+} 
+
+/* BODY STYLING */
+body {
+    font-family: Arial; /* Sets font */
+    
+}   
+
+
+
+/* this is the og code  */
+
+/* NAVBAR
+/* .navbar { */
+    /* background: #2c5aa0;     Blue background */
+    /* padding: 10px;      Space inside navbar */
+    /* display: flex;         Makes items flexible */
+    /* justify-content: flex-end;            Aligns items to right */
+/* }/ */
+/* NAV ICONS */
+/* .nav-right span { */
+    /* color: white; Icon color */
+    /* margin-left: 15px; Space between icons */
+   /*  cursor: pointer; Makes it clickable */
+/* }  */
+
+/* this is the og code  */
+
+/* this is the mopdified ceode for top navigation bar */
+
+/* ================= NAVBAR ================= */
+.top-contact-bar {
+    width: 100%;
+    background-color: #00AEEF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 52px;
+    padding: 0;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black; 
+    border-top: 2px solid black;   
+    position: sticky;     
+    top: 0;
+    z-index: 1000  
+
+}
+
+/* Phone icon button */
+.top-contact-bar .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.top-contact-bar .icon-btn svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+/* WhatsApp button - white tile */
+.top-contact-bar .wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 52px;
+    background: #ffffff;
+    border: 2px solid #00AEEF;
+    cursor: pointer;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.top-contact-bar .wa-btn svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+/* Hover effects */
+.top-contact-bar .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.top-contact-bar .icon-btn:hover svg {
+    transform: scale(1.15) rotate(-10deg);
+}
+
+.top-contact-bar .wa-btn:hover {
+    background: #e8fdf0;
+    transform: translateY(-2px);
+}
+
+.top-contact-bar .wa-btn:hover svg {
+    transform: scale(1.15);
+}
+
+/* Active / click feedback */
+.top-contact-bar .icon-btn:active,
+.top-contact-bar .wa-btn:active {
+    transform: scale(0.95);
+}
+
+/* this is the mopdified ceode for top navigation bar*/
+
+
+
+
+
+/* SCROLL BANNER */
+/* BANNER CONTAINER */
+scroll-banner {
+    overflow: hidden; /* hides extra images */
+    position: sticky;   /* makes it sticky */
+    top: 52px;          /* 52px = height of your navbar so it sticks just below navbar */
+    z-index: 999;
+}
+
+/* TRACK */
+.scroll-track {
+    display: flex; /* horizontal layout */
+    width: max-content; /* makes width based on content */
+    animation: scroll 20s linear infinite; 
+    /* increased duration for smooth scrolling */
+}
+
+/* IMAGE */
+.scroll-track img {
+    height: 120px;    /* 🔥 THIS controls height */
+    /* object-fit: cover; prevents image stretching */
+    width: 250px; /* control size */
+    margin-right: 0px; /* spacing */
+}
+
+/* ANIMATION */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* BANNER */
+
+
+
+
+
+
+
+
+
+/* PRODUCT GRID */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONTAINER GRID */
+.category-container {
+  display: grid;
+
+  /* ✅ Desktop: 4 columns (big but flexible) */
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px; /* slightly increased spacing */
+  padding: 20px;
+}
+
+/* CARD */
+.category-card {
+  text-decoration: none;
+  color: black;
+  background: #f8f8f8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  border-radius: 10px;
+
+  transition: 0.3s;
+
+  /* ✅ Increased height */
+  height: 320px;
+}
+
+/* HOVER EFFECT */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE CONTROL */
+.category-card img {
+  width: 120%;
+
+  /* ✅ Bigger image */
+  height: 260px;
+
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* TEXT */
+.category-card h3 {
+  margin-top: 15px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* ✅ TABLET (optional but recommended) */
+@media (max-width: 900px) {
+  .category-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ✅ MOBILE (IMPORTANT: 2 per row) */
+@media (max-width: 600px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card {
+    height: 280px; /* slightly smaller for mobile */
+  }
+
+  .category-card img {
+    height: 180px;
+  }
+}
+
+/* THIS I THE MODIFIED CODE */
+
+
+/* THIS I THE MODIFIED CODE */
+
+
+
+
+
+
+
+
+/* PAGINATION */
+.pagination {
+    display: flex; /* Align buttons */
+    justify-content: center; /* Center horizontally */
+    gap: 10px; /* Space between buttons */
+    margin: 20px;
+}
+
+/* BUTTON STYLE */
+.pagination button {
+    padding: 10px 15px; /* Button size */
+    border: 1px solid orange; /* Border */
+    background: white;
+    cursor: pointer;
+}
+
+/* ACTIVE BUTTON */
+.pagination .active {
+    background: orange;
+    color: white;
+}
+
+/* FOOTER */
+
+/* .footer-banner { */
+    /* width: 100%;       takes full width of the body */
+    /* height: 300px;        set your desired height here */
+    /* object-fit: cover;  */
+    /* display: flex;           add this */
+    /* justify-content: center;    add this - centers horizontally */
+    /* align-items: center;  */
+/* } */
+
+
+footer-banner {
+    width: 100%;
+    overflow: hidden;   /* prevents any overflow */
+}
+
+.footer-banner img {
+    width: 100%;        /* full width of the page */
+    height: auto;       /* height adjusts automatically — keeps aspect ratio */
+    display: block;     /* removes any extra gap below image */
+}
+
+/* TJHIS IS THE MODIFIED CODDE FOR MADEIN INDIAN BANNER */
+
+
+
+
+
+/* TJHIS IS THE MODIFIED CODDE FOR MADEIN INDIAN BANNER */
+
+/* font style of the category  */
+
+.product-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;        /* bold text */
+    color: #2c2c2c;          /* dark grey — looks clean */
+    margin-top: 10px;        /* space between image and text */
+    letter-spacing: 0.5px;   /* slight spacing between letters */
+    text-transform: capitalize; /* First Letter Capital */
+}
+
+/* font style of the category  */
+
+
+
+
+
+
+
+
+
+
+/* cateegories navbar */
+/* ================= CATEGORY BUTTON ================= */
+
+/* cateegories navbar */
+
+
+/* slider section */
+
+/* MAIN SLIDER */
+.slider {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* CONTAINER */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+}
+
+/* SLIDES */
+.slide {
+  position: absolute;
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+/* IMAGE FIT FIX */
+.slide img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+
+
+}
+
+/* CENTER IMAGE */
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+  width: 60%;
+}
+
+/* LEFT IMAGE */
+.slide.left {
+  opacity: 0.6;
+  transform: translateX(-90%) scale(0.75); /* reduced gap */
+  z-index: 2;
+  width: 40%;
+}
+
+/* RIGHT IMAGE */
+.slide.right {
+  opacity: 0.6;
+  transform: translateX(90%) scale(0.75); /* reduced gap */
+  z-index: 2;
+  width: 40%;
+}
+
+/* COUNTER */
+.counter {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.controls {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE FIX */
+/* ========================= */
+@media (max-width: 600px) {
+
+  .slider {
+    margin: 10px auto;
+  }
+
+  .slider-container {
+    height: 220px;
+  }
+
+  /* MAIN IMAGE */
+  .slide.active {
+    width: 70%;
+  }
+
+  /* SIDE IMAGES NOW VISIBLE */
+  .slide.left {
+    transform: translateX(-70%) scale(0.65);
+    width: 45%;
+    opacity: 0.5;
+  }
+
+  .slide.right {
+    transform: translateX(70%) scale(0.65);
+    width: 45%;
+    opacity: 0.5;
+  }
+
+  /* SMALLER IMAGE HEIGHT */
+  .slide img {
+    max-height: 220px;
+  }
+
+  /* COUNTER */
+  .counter {
+    font-size: 16px;
+  }
+
+  /* BUTTONS */
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+/* slider section */
